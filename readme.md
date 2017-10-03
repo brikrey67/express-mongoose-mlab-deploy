@@ -1,19 +1,23 @@
-# Deployfest
-
-Deployfest isn't so much a class as it is a "deployment clinic." We're here to help with whatever deployment issues you may be having and walk through common issues the class is experiencing.  
-
-Below, however, are some suggestions for things to try out before raising your hand...
+# Deploy
 
 ## First Steps
 
-Following Heroku's **[Getting Started with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)** guide should take care of the deployment issues most of you will encounter. Take particular note of...
+Following Heroku's **[Getting Started with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)** guide should take care of the deployment issues most of you will encounter, and give you a sense of how use heroku's deployment environment and features. Take particular note of..
+
 * [Define a Procfile](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile).
 * [Provision a database](https://devcenter.heroku.com/articles/getting-started-with-nodejs#provision-a-database).
-* If storing API keys as environment variables, [Define config vars](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-config-vars).
+* If you've been storing API keys as environment variables locally, [define config vars](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-config-vars).
+
+
+## Next Steps
+
+* [Setting up a cloud-based mongo database on mlab.com](./mongodb.md)
+* [Using `dotenv` to store sensitive information in the environment](https://github.com/motdotla/dotenv)
+    > After reading documentation, make sure you add `.env` to your `.gitignore` file, since `.env` will contain the sensitive data you **don't want under version control***.
 
 ## Google Is Your Best Friend
 
-More often that not, solving deployment issues requires a good deal of Googling. Don't expect to find a silver bullet -- go through the different issues other users may have encountered.  
+More often that not, solving deployment issues requires a good deal of Googling. Don't expect to find a silver bullet -- often we must go through many different issues other users may have encountered to understand our own.
 
 What should you Google?
 * If you aren't able to deploy, Google the error that shows up in your terminal after trying to push your app.
