@@ -1,4 +1,4 @@
-# Deploying Node-Express-Mongo Apps to Heroku
+# Deploying Node-Express-Mongoose Apps to Heroku
 
 Deploying our Node-Express-Mongoose application (our APIs) consists of 2 sets of steps. First, we'll set up a Mongo database that our Node-Express-Mongoose back-end can connect to, and then configure our Node-Express-Mongoose applications (our APIs) to connect to this new cloud-hosted database.
 
