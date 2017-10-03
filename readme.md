@@ -14,7 +14,7 @@ Following Heroku's **[Getting Started with Node.js](https://devcenter.heroku.com
 * [Provision a database](https://devcenter.heroku.com/articles/getting-started-with-nodejs#provision-a-database).
 * If you've been storing API keys as environment variables locally, [define config vars](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-config-vars).
 
-Speaking of config vars, [using `dotenv` to store sensitive information in the environment](https://github.com/motdotla/dotenv) is a fantastic practice, and accords with 12-factor principles.
+Speaking of config vars, [using `dotenv` to store sensitive information in the environment](https://github.com/motdotla/dotenv) is a fantastic practice, and accords with [12-factor principles](https://12factor.net/).
     > After reading documentation, make sure you add `.env` to your `.gitignore` file, since `.env` will contain the sensitive data you **don't want under version control***.
 
 ## Google Is Your Best Friend
