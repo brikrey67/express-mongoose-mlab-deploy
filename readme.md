@@ -51,6 +51,7 @@ Today, we'll be using a service called Heroku to deploy our apps, because it mak
 ### [You Do: Read about Environments](about-environments.md)
 
 > 15 minutes
+>
 > Start by reading about environments. We've been using the `development` environment by default, now we'll look at other environments, particularly `production`.
 
 ### Environmental Variables
@@ -90,13 +91,14 @@ Following Heroku's **[Getting Started with Node.js](https://devcenter.heroku.com
 **Use When President** to follow the deployment tutorial but stop after the 'Define a Procfile' step. **Do not use the sample application provided by Heroku** Once you've deployed read through the remaining steps to learn more about using Heroku and its features.
 
 > **Notice:** before pushing to your heroku remote you will need to make a minor change to `index.js`. When Heroku starts your app it will assign a port to `process.env.PORT` (an environmental variable!). We can modify `app.listen` to accomodate Heroku's production port and our own local development port.
+>
 > ```js
-  app.set('port', process.env.PORT || 3001)
-
-  app.listen(app.get('port'), () => {
-    console.log(`✅ PORT: ${app.get('port')} 🌟`)
-})
-```
+>  app.set('port', process.env.PORT || 3001)
+>
+>  app.listen(app.get('port'), () => {
+>    console.log(`✅ PORT: ${app.get('port')} 🌟`)
+>})
+>```
 
 ## You Do: [Set Up Your Cloud-Based Mongo Database](./mongodb.md)
 
