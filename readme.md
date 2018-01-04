@@ -78,6 +78,11 @@ $ export <YOUR-ENVIRONMENTAL_VARIABLE_NAME>=<variableValue>
 
 Try logging process.env.<YOUR-ENVIRONMENTAL_VARIABLE_NAME> from the node repl to test.
 
+**bonus: dotenv**
+
+[`dotenv](https://github.com/motdotla/dotenv) is a node package used to store sensitive information in the environment. It's a handy too but not strictly necessary for this deployment. It is a fantastic practice, and accords with [12-factor principles](https://12factor.net/).
+  > After reading documentation, make sure you add `.env` to your `.gitignore` file, since `.env` will contain the sensitive data you **don't want under version control***.
+
 ## Deploying Node-Express-Mongoose Apps
 
 Deploying our Node-Express-Mongoose application (our APIs) consists of 2 sets of steps. First, we'll deploy our application to Heroku. Then we'll set up a Mongo database that our app can connect to. Finally, we'll configure our Node-Express-Mongoose applications (our APIs) to connect to this new cloud-hosted database.
@@ -103,12 +108,6 @@ Following Heroku's **[Getting Started with Node.js](https://devcenter.heroku.com
 ## You Do: [Set Up Your Cloud-Based Mongo Database](./mongodb.md)
 
 Clicking the link in the header above will take you to a set of instructions for setting up a cloud-hosted (via AWS) Mongo database you can use in your deployed Heroku application.
-
-
-
-
-Speaking of config vars, [using `dotenv` to store sensitive information in the environment](https://github.com/motdotla/dotenv) is a fantastic practice, and accords with [12-factor principles](https://12factor.net/).
-    > After reading documentation, make sure you add `.env` to your `.gitignore` file, since `.env` will contain the sensitive data you **don't want under version control***.
 
 ## Google Is Your Best Friend
 
