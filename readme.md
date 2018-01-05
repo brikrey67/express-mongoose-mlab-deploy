@@ -109,7 +109,7 @@ Deploying our Node-Express-Mongoose application (our APIs) consists of 2 sets of
   })
 ```
 
-5. Follow Heroku's [Getting Started with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs) to deploy **When President** (if you don't have a working lab, use the 'express-mongoose-solution' branch). **Do not use the sample application provided by Heroku**
+5. Follow Heroku's [Getting Started with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs) to deploy **When President** (if you don't have a working lab, use the 'express-mongoose-solution' branch). **Do not use the sample application provided by Heroku**. There will be a few redundant steps, skip them.
 
 > Follow the deployment tutorial but **stop** after the 'Define a Procfile' step. Once you've deployed, read through the remaining steps to learn more about using Heroku and its features.
 
