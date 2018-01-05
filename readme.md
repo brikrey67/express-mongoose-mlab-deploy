@@ -58,7 +58,7 @@ Today, we'll be using a service called Heroku to deploy our apps, because it mak
 
 Node manages application environments using 'environmental variables'. Environmental variables store configuration information that is defined outside of your codebase. Storing this information separately protects sensitive information like API keys and passwords because it is not visible from your project directory.
 
-This is accomplished using `process` a global object that comes with all node projects. `process` has property called `env` where we store environmental variables.
+This is accomplished using `process` a global object that comes with all node projects. `process` has a property `env` where we store environmental variables.
 
 We can view a projects environmental variables using the node repl in our terminal.
 
@@ -88,7 +88,7 @@ Deploying our Node-Express-Mongoose application (our APIs) consists of 2 sets of
 
 ## You Do: Deploy 'When President'
 
-> If you don't have a working lab, use the 'express-mongoose-solution' branch.
+> If you don't have a working lab, use the 'express-mongoose-solution' branch. Pay special attention to step 7.
 
 We'll use Heroku to deploy our app, since it has a "free" pricing tier, and a ton of nice features that simplify and expedite deployment.
 
@@ -96,7 +96,7 @@ We'll use Heroku to deploy our app, since it has a "free" pricing tier, and a to
 
 2. Follow the instructions [here](https://devcenter.heroku.com/articles/heroku-cli) to download the Heroku CLI.
 
-3. Create an app on Heroku `$ heroku create <your-app-name>`
+3. From your project directory, create an app on Heroku `$ heroku create <your-app-name>`
 
   > `heroku create` prepares Heroku to receive your code. Heroku will randomly create an app name for you if you don't specify one.
 
@@ -116,13 +116,13 @@ We'll use Heroku to deploy our app, since it has a "free" pricing tier, and a to
 
 6. Define a [Procfile](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile) in the root of your directory. Include the line `web: node index.js`.
 
-  > Heroku looks to the `Procfile` for its first instruction when starting your app. In this case that instruction is to run `node index.js`.
+  > Heroku looks to the `Procfile` for its first instruction when starting your app. In this case, that instruction is to run `node index.js`.
 
 7. Push your code to your 'Heroku' remote. `$ git push heroku master`
 
   > If you aren't using a master branch you will need to run `$ git push heroku <your-branch>:master`
 
-  **Errors?** Check your Heroku log! `$ heroku logs --tail`
+  **Not working?** Check your Heroku log for helpful errors! `$ heroku logs --tail`
 
 8. Seed your mlab database. `$ heroku run node db/seed.js`
 
@@ -132,7 +132,9 @@ We'll use Heroku to deploy our app, since it has a "free" pricing tier, and a to
 
   > `heroku open` launches your production app in a new browser tab.
 
-Great job! Your app is fully deployed. Once finished, read through Heroku's [Getting started with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs). It explains the steps more in-depth and highlights many other useful features.
+  **Not working?** Check your Heroku log for helpful errors! `$ heroku logs --tail`
+
+Great job! Your app is fully deployed. Once finished, read through Heroku's [Getting started with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs). It explains the steps in more depth and highlights many other useful features.
 
 ## Google Is Your Best Friend
 
