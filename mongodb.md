@@ -56,12 +56,4 @@ The code below is stating that we should use the MLab URI (in other words, the l
 
   > assigning environmental variables using `heroku config:set` is very similar to using `export`. The difference being accessibility. Variables assigned using the heroku command are only accessible from the production app deployed on heroku.
 
-3. `$ heroku run node db/seed.js`
-
-  > `heroku run` allows you to run js files on the heroku server. We can seed our database on heroku using the same seed file we used locally.
-
-4. `$ heroku open`
-
-  > `heroku open` launches your production app in a new browser tab.
-
-Great job! Your app is fully deployed.
+Great! You should be configured and ready to go!

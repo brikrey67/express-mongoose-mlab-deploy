@@ -81,25 +81,30 @@ Try logging process.env.<YOUR-ENVIRONMENTAL_VARIABLE_NAME> from the node repl to
 #### **Bonus: dotenv**
 
 [dotenv](https://github.com/motdotla/dotenv) is a node package used to store sensitive information in the environment. It's a handy tool but not strictly necessary for this deployment. It is a fantastic practice, and accords with [12-factor principles](https://12factor.net/).
-  > After reading documentation, make sure you add `.env` to your `.gitignore` file, since `.env` will contain the sensitive data you **don't want under version control***.
 
 ## Deploying Node-Express-Mongoose Apps
 
-Deploying our Node-Express-Mongoose application (our APIs) consists of 2 sets of steps. First, we'll deploy our application to Heroku. Then we'll set up a Mongo database that our app can connect to. Finally, we'll configure our Node-Express-Mongoose applications (our APIs) to connect to this new cloud-hosted database.
+Deploying our Node-Express-Mongoose application (our APIs) consists of 2 sets of steps. First, we'll sign up for Heroku and download the Heroku CLI. Then we'll set up a Mongo database that our app can connect to. Next, we'll configure our Node-Express-Mongoose applications (our APIs) to connect to this new cloud-hosted database and finally, deploy our application to Heroku.
 
-## You Do: Deploy
+## You Do: Deploy 'When President'
 
-> We'll use Heroku to deploy our app, since it has a "free" pricing tier, and a ton of nice features that simplify and expedite deployment.
+> If you don't have a working lab, use the 'express-mongoose-solution' branch.
+
+We'll use Heroku to deploy our app, since it has a "free" pricing tier, and a ton of nice features that simplify and expedite deployment.
 
 1. Sign up for a free [Heroku](https://www.heroku.com/) account.
 
 2. Follow the instructions [here](https://devcenter.heroku.com/articles/heroku-cli) to download the Heroku CLI.
 
-3. [Set Up Your Cloud-Based Mongo Database](./mongodb.md)
+3. Create an app on Heroku `$ heroku create <your-app-name>`
 
-> Clicking the link in the header above will take you to a set of instructions for setting up a cloud-hosted (via AWS) Mongo database you can use in your deployed Heroku application.
+  > `heroku create` prepares Heroku to receive your code. Heroku will randomly create an app name for you if you don't specify one.
 
-4. **Before** deploying to heroku you will need to make a minor change to `index.js`. When Heroku starts your app it will automatically assign a port to `process.env.PORT` (an environmental variable!) to be used in production. We can modify `app.listen` to accomodate Heroku's production port and our own local development port.
+4. [Set Up Your Cloud-Based Mongo Database](./mongodb.md)
+
+  > Clicking the link in the header above will take you to a set of instructions for setting up a cloud-hosted (via AWS) Mongo database you can use in your deployed Heroku application.
+
+5. **Before** deploying to heroku you will need to make a minor change to `index.js`. When Heroku starts your app it will automatically assign a port to `process.env.PORT` (an environmental variable!) to be used in production. We can modify `app.listen` to accomodate Heroku's production port and our own local development port.
 
 ```js
   app.set('port', process.env.PORT || 3001)
@@ -109,9 +114,25 @@ Deploying our Node-Express-Mongoose application (our APIs) consists of 2 sets of
   })
 ```
 
-5. Follow Heroku's [Getting Started with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs) to deploy **When President** (if you don't have a working lab, use the 'express-mongoose-solution' branch). **Do not use the sample application provided by Heroku**. There will be a few redundant steps, skip them.
+6. Define a [Procfile](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile) in the root of your directory. Include the line `web: node index.js`.
 
-> Follow the deployment tutorial but **stop** after the 'Define a Procfile' step. Once you've deployed, read through the remaining steps to learn more about using Heroku and its features.
+  > Heroku looks to the `Procfile` for its first instruction when starting your app. In this case that instruction is to run `node index.js`.
+
+7. Push your code to your 'Heroku' remote. `$ git push heroku master`
+
+  > If you aren't using a master branch you will need to run `$ git push heroku <your-branch>:master`
+
+  **Errors?** Check your Heroku log! `$ heroku logs --tail`
+
+8. Seed your mlab database. `$ heroku run node db/seed.js`
+
+  > `heroku run` allows you to run js files on the heroku server. We can seed our database on heroku using the same seed file we used locally.
+
+9. `$ heroku open`
+
+  > `heroku open` launches your production app in a new browser tab.
+
+Great job! Your app is fully deployed. Once finished, read through Heroku's [Getting started with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs). It explains the steps more in-depth and highlights many other useful features.
 
 ## Google Is Your Best Friend
 
