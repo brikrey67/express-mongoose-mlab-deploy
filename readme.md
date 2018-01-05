@@ -87,35 +87,40 @@ Try logging process.env.<YOUR-ENVIRONMENTAL_VARIABLE_NAME> from the node repl to
 
 Deploying our Node-Express-Mongoose application (our APIs) consists of 2 sets of steps. First, we'll deploy our application to Heroku. Then we'll set up a Mongo database that our app can connect to. Finally, we'll configure our Node-Express-Mongoose applications (our APIs) to connect to this new cloud-hosted database.
 
-## You Do: Deploy to Heroku
+## You Do: Deploy
 
 > We'll use Heroku to deploy our app, since it has a "free" pricing tier, and a ton of nice features that simplify and expedite deployment.
 
-Following Heroku's **[Getting Started with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)** guide takes care of many deployment issues most of you will encounter, and give you a sense of how to use Heroku's deployment environment and features.
+1. Sign up for a free [Heroku](https://www.heroku.com/) account.
 
-**Use When President** to follow the deployment tutorial but stop after the 'Define a Procfile' step. **Do not use the sample application provided by Heroku** Once you've deployed read through the remaining steps to learn more about using Heroku and its features.
+2. Follow the instructions [here](https://devcenter.heroku.com/articles/heroku-cli) to download the Heroku CLI.
 
-> **Notice:** before pushing to your heroku remote you will need to make a minor change to `index.js`. When Heroku starts your app it will automatically assign a port to `process.env.PORT` (an environmental variable!) to be used in production. We can modify `app.listen` to accomodate Heroku's production port and our own local development port.
->
-> ```js
->  app.set('port', process.env.PORT || 3001)
->
->  app.listen(app.get('port'), () => {
->    console.log(`✅ PORT: ${app.get('port')} 🌟`)
->})
->```
+3. [Set Up Your Cloud-Based Mongo Database](./mongodb.md)
 
-## You Do: [Set Up Your Cloud-Based Mongo Database](./mongodb.md)
+> Clicking the link in the header above will take you to a set of instructions for setting up a cloud-hosted (via AWS) Mongo database you can use in your deployed Heroku application.
 
-Clicking the link in the header above will take you to a set of instructions for setting up a cloud-hosted (via AWS) Mongo database you can use in your deployed Heroku application.
+4. **Before** deploying to heroku you will need to make a minor change to `index.js`. When Heroku starts your app it will automatically assign a port to `process.env.PORT` (an environmental variable!) to be used in production. We can modify `app.listen` to accomodate Heroku's production port and our own local development port.
+
+```js
+  app.set('port', process.env.PORT || 3001)
+
+  app.listen(app.get('port'), () => {
+    console.log(`✅ PORT: ${app.get('port')} 🌟`)
+  })
+```
+
+5. Follow Heroku's [Getting Started with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs) to deploy **When President** (if you don't have a working lab, use the 'express-mongoose-solution' branch). **Do not use the sample application provided by Heroku**
+
+> Follow the deployment tutorial but **stop** after the 'Define a Procfile' step. Once you've deployed, read through the remaining steps to learn more about using Heroku and its features.
 
 ## Google Is Your Best Friend
 
 More often that not, solving deployment issues requires a good deal of Googling. Don't expect to find a silver bullet -- often we must go through many different issues other users may have encountered to understand our own.
 
 What should you Google?
-* If you aren't able to deploy, Google the error that shows up in your terminal after trying to push your app.
-* If you are able to deploy but your app doesn't load/function propertly, see what shows up after running `$ heroku logs` in the Terminal.
+
+- If you aren't able to deploy, Google the error that shows up in your terminal after trying to push your app.
+- If you are able to deploy but your app doesn't load/function properly, see what shows up after running `$ heroku logs` in the Terminal.
 
 ## Help Each Other Out
 
