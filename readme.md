@@ -88,7 +88,7 @@ Deploying our Node-Express-Mongoose application (our APIs) consists of 2 sets of
 
 ## You Do: Deploy 'When President'
 
-> If you don't have a working lab, use the 'express-mongoose-solution' branch. Pay special attention to step 7.
+> If you don't have a working lab, use the 'express-mongoose-solution' branch after cloning from [here](https://git.generalassemb.ly/ga-wdi-exercises/whenpresident) Pay special attention to step 7 below.
 
 We'll use Heroku to deploy our app, since it has a "free" pricing tier, and a ton of nice features that simplify and expedite deployment.
 
